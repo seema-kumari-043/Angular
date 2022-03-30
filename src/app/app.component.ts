@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NsService } from './ns.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Project001';
+  title = 'Demo';
+  name = "Seema";
+  name2 ="";
+  disable = false;
+  
+  goBack(){return "go back"};
+
+  message:String="";
+  constructor(private nsService:NsService){}
+    ngOnInit():void{
+      this.message = this.nsService.getMsg();
+    
+  }
 }
+
+
